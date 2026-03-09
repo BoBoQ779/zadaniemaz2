@@ -1,19 +1,18 @@
 pipeline {
     agent any
-
+ 
     stages {
-
-        stage('Build') {
+        stage('Kompilacja') {
             steps {
-                sh 'javac Main.java'
+                // Używamy 'bat' ponieważ Jenkins jest na Windowsie
+                bat 'javac Sort.java' 
             }
         }
-
-        stage('Run') {
+        stage('Uruchomienie') {
             steps {
-                sh 'java Main'
+                // Uruchamiamy skompilowany plik klas
+                bat 'java Sort'
             }
         }
-
     }
 }
