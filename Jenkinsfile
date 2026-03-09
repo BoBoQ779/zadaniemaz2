@@ -5,13 +5,13 @@ pipeline {
 
         stage('Kompilacja') {
             steps {
-                sh 'javac Sort.java'
+                sh 'gcc sort.c -o sort'
             }
         }
 
         stage('Uruchomienie') {
             steps {
-                sh 'java Sort'
+                sh './sort'
             }
         }
 
